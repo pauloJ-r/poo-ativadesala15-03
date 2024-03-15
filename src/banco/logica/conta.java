@@ -29,21 +29,23 @@ public class conta {
 
 	public void sacar(BigDecimal quantia) {
 		if(isStatus() && quantia.compareTo(this.saldo) <=0) {
-			this.saldo.subtract(quantia);
+           this.saldo = saldo.subtract(quantia);
 		}else
 			System.out.println("Operação inválida");
 	}
+	
 	public void depositar(BigDecimal quantia) {
-		if(isStatus()) {
-			this.saldo.add(quantia);
+		if(isStatus() && quantia.compareTo(saldo) >= 0) {
+			this.saldo = saldo.add(quantia);
 		}else
 			System.out.println("Operação inválida");	
 	}
+	
     public void transferir(BigDecimal quantia, conta destino) {
-    	if(this.saldo.compareTo(quantia) > 0 && this.isStatus()
+    	if(this.saldo.compareTo(quantia) >= 0 && this.isStatus()
     			&& destino.isStatus()) {
-    		this.saldo.subtract(quantia);
-    		destino.saldo.add(quantia);
+    		this.saldo = this.saldo.subtract(quantia);
+    		destino.saldo = destino.saldo.add(quantia);
     	}
     	else
     		System.out.println("Operação inválida");	
