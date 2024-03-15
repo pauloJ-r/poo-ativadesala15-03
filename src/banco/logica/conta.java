@@ -69,7 +69,7 @@ public class conta {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-
+    
 	@Override
 	public int hashCode() {
 		return Objects.hash(numero);

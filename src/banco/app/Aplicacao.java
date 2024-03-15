@@ -14,9 +14,9 @@ public class Aplicacao {
     	 c.sacar(new BigDecimal("50"));
     	 c.transferir(new BigDecimal("25"), c1);
     	 
-    	 cli.getContas().add(c1);
-    	 cli.getContas().add(c);
-    	
+    	 cli.addConta(c1);
+    	 cli.addConta(c);
+    	 cli.remConta(c);
     	 System.out.println(cli);
      }
 }

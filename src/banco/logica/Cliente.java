@@ -7,7 +7,7 @@ public class Cliente {
     private String nome;
     
     
-    ArrayList<conta> contas = new ArrayList<>();
+    private ArrayList<conta> contas = new ArrayList<>();
 
 
 	public Cliente(String cpf, String nome) {
@@ -16,7 +16,12 @@ public class Cliente {
 		
 	}
 
-
+	public void addConta(conta c) {
+    	this.contas.add(c);
+    }
+	public void remConta(conta c) {
+		this.contas.remove(c);
+	}
 	@Override
 	public String toString() {
 		return "Cliente [cpf=" + cpf + ", nome=" + nome + ", contas=" + contas + "]";
@@ -46,17 +51,11 @@ public class Cliente {
     public String getCpf() {
 		return cpf;
 	}
-    public ArrayList<conta> getContas() {
-		return contas;
-	}
     public void setNome(String nome) {
 		this.nome = nome;
 	}
     public void setCpf(String cpf) {
 		this.cpf = cpf;
-	}
-    public void setContas(ArrayList<conta> contas) {
-		this.contas = contas;
 	}
     
 }
